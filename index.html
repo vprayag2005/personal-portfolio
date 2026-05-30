@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Prayag V</title>
+    <meta name="description" content="Personal portfolio of Prayag V, a passionate developer building amazing web experiences.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">PV<span>.</span></a>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#opensource">Open Source</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="section">
+        <div class="hero-content">
+            <h2 class="greeting">Hi, I am</h2>
+            <h1 class="name">Prayag V</h1>
+            <h3 class="role">Student & Python Developer</h3>
+            <p class="summary">I am a B.Tech student in AI & ML who loves building Python applications, writing clean algorithms, and actively contributing to open-source projects.</p>
+            <div class="hero-buttons">
+                <a href="resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="glass-card">
+                <div class="card-content">
+                    <i class="fab fa-python"></i>
+                    <h4>Python</h4>
+                </div>
+            </div>
+            <div class="glass-card card-2">
+                <div class="card-content">
+                    <i class="fab fa-github"></i>
+                    <h4>Open Source</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Open Source Section -->
+    <section id="opensource" class="section">
+        <div class="section-title">
+            <h2>Open Source</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="os-container" style="max-width: 1000px;">
+            <!-- SymPy -->
+            <div class="os-card" style="padding: 30px;">
+                <div class="os-header" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fab fa-github" style="font-size: 1.8rem;"></i>
+                        <h3 style="font-size: 1.5rem;">SymPy</h3>
+                    </div>
+                    <span style="background: var(--gradient); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; color: white;">38 Merged PRs</span>
+                </div>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--text-main);">
+                    Active contributor to the core algorithms and linear algebra modules of SymPy. Significantly improved the computational performance of matrix operations (Jordan Normal Forms, Eigenvalue evaluations), optimized complex root-finding algorithms, and resolved critical symbolic solver bugs.
+                </p>
+                <a href="https://github.com/sympy/sympy/pulls?q=is%3Apr+is%3Amerged+author%3Avprayag2005" target="_blank" class="os-link" style="margin-top: 20px;">View All Contributions <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Airspeed Velocity -->
+            <div class="os-card" style="padding: 30px;">
+                <div class="os-header" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fab fa-github" style="font-size: 1.8rem;"></i>
+                        <h3 style="font-size: 1.5rem;">Airspeed Velocity (ASV)</h3>
+                    </div>
+                    <span style="background: var(--gradient); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; color: white;">Feature Addition</span>
+                </div>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--text-main);">
+                    Contributed to <strong>asv_spyglass</strong>, a part of the standard Python benchmarking tool Airspeed Velocity. Implemented the <code>--only-improved</code> and <code>--only-regressed</code> CLI flags, giving developers a streamlined interface to instantly identify performance regressions and improvements across complex benchmark suites.
+                </p>
+                <a href="https://github.com/airspeed-velocity/asv_spyglass/pull/10" target="_blank" class="os-link" style="margin-top: 20px;">View Pull Request <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://opengraph.githubassets.com/bf7714cdacb1f2f7c2d05403c542fb2956041d48b81cbd8f3efa5f211ed34a6b/vprayag2005/WeatherApp" alt="WeatherApp Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <h3>WeatherApp (Clima)</h3>
+                    <p>A comprehensive weather portal integrating real-time IMD severe weather alerts and personalized regional news. Engineered with asynchronous background processing to sync heavy meteorological maps.</p>
+                    <div class="tech-tags">
+                        <span>Python (Django)</span>
+                        <span>Celery & Redis</span>
+                        <span>MySQL</span>
+                        <span>Docker</span>
+                        <span>Playwright</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/vprayag2005/WeatherApp" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
+                        <a href="https://clima-weather.centralindia.cloudapp.azure.com/" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://opengraph.githubassets.com/f21750ead22e81fefb1563982c6aa35ceb52170833f0e9d97f87d0c68343e9d5/vprayag2005/VisumateBot" alt="VisumateBot Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <h3>VisumateBot (AI Video Generator)</h3>
+                    <p>An intelligent Telegram bot that leverages Google's Gemini AI and the Pexels API to automatically generate stunning landscape and portrait videos directly from chat commands.</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Telegram API</span>
+                        <span>Gemini AI</span>
+                        <span>Pexels API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/vprayag2005/VisumateBot" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://opengraph.githubassets.com/d1bf2eba57a4e101ec7fa9b5d90ad4dcf778857215397806066de9c1a86eb5ff/vprayag2005/Advance-Calculator" alt="Advance Calculator Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <h3>Advanced CLI Calculator</h3>
+                    <p>An interactive, modular calculator featuring custom algorithmic implementations (Heron's method, Newton-Raphson, Maclaurin series) and backed by robust automated tests.</p>
+                    <div class="tech-tags">
+                        <span>Python 3</span>
+                        <span>Algorithms</span>
+                        <span>Pytest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/vprayag2005/Advance-Calculator" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-title">
+            <h2>My Skills</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="skills-grid">
+            <!-- Skill Cards -->
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python & Core</h3>
+                <p>Python 3, Data Structures, Algorithms, Linear Algebra</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>Backend & Systems</h3>
+                <p>Django, Celery, Redis, Docker</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Databases</h3>
+                <p>MySQL</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-wrench"></i>
+                <h3>Libraries & Tools</h3>
+                <p>SymPy, Pytest, Playwright, Git</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-title">
+            <h2>Education</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>B.Tech in Artificial Intelligence & Machine Learning</h3>
+                    <h4 class="university">Vidya Academy of Science and Technology</h4>
+                    <p class="date">2023 - 2027 (Expected)</p>
+                    <p>Focusing on core AI algorithms, machine learning models, and software engineering principles.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <h4 class="university">KMBVM Thrissur</h4>
+                    <p class="date">Completed</p>
+                    <p>Strong foundation in Science and Mathematics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Connect</h2>
+            <p>I'm currently looking for new opportunities, my inbox is always open.</p>
+            <div class="social-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.prayag2005@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/prayag-v-82075b298/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/vprayag2005" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Prayag V. Built with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
+
