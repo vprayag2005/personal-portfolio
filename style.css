@@ -409,7 +409,7 @@ a {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 40px;
 }
 
@@ -419,6 +419,7 @@ a {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
+    word-break: break-word;
 }
 
 .project-card:hover {
@@ -496,7 +497,7 @@ a {
 /* Open Source Section */
 .os-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 40px;
 }
 
@@ -507,6 +508,7 @@ a {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
+    word-break: break-word;
 }
 
 .os-card:hover {
