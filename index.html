@@ -13,158 +13,195 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        surface: '#121212',
+                        'surface-light': '#1e1e1e',
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        main: '#f8fafc',
+                        muted: '#94a3b8',
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background: linear-gradient(135deg, #6366f1, #ec4899);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .bg-gradient-custom {
+                background: linear-gradient(135deg, #6366f1, #ec4899);
+            }
+        }
+    </style>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-dark text-main font-body leading-relaxed overflow-x-hidden">
     <!-- Navbar -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">PV<span>.</span></a>
-            <div class="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#opensource">Open Source</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
+    <nav id="navbar" class="fixed top-0 w-full px-5 md:px-[10%] py-5 z-50 transition-all duration-300 bg-transparent">
+        <div class="flex justify-between items-center">
+            <a href="#" class="font-heading text-2xl font-extrabold logo">PV<span class="text-primary">.</span></a>
+            <div class="hidden md:flex gap-8 nav-links">
+                <a href="#hero" class="text-[0.95rem] font-medium relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-[5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-custom after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="#opensource" class="text-[0.95rem] font-medium relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-[5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-custom after:transition-all after:duration-300 hover:after:w-full">Open Source</a>
+                <a href="#projects" class="text-[0.95rem] font-medium relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-[5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-custom after:transition-all after:duration-300 hover:after:w-full">Projects</a>
+                <a href="#skills" class="text-[0.95rem] font-medium relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-[5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-custom after:transition-all after:duration-300 hover:after:w-full">Skills</a>
+                <a href="#education" class="text-[0.95rem] font-medium relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-[5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-custom after:transition-all after:duration-300 hover:after:w-full">Education</a>
             </div>
-            <div class="hamburger">
+            <div class="md:hidden text-2xl cursor-pointer hamburger">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="hero" class="section">
-        <div class="hero-content">
-            <h2 class="greeting">Hi, I am</h2>
-            <h1 class="name">Prayag V</h1>
-            <h3 class="role">Student & Python Developer</h3>
-            <p class="summary">I am a B.Tech student in AI & ML who loves building Python applications, writing clean algorithms, and actively contributing to open-source projects.</p>
-            <div class="hero-buttons">
-                <a href="resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <header id="hero" class="pt-[150px] pb-24 px-5 md:px-[10%] min-h-screen flex flex-col md:flex-row items-center justify-between">
+        <div class="flex-1 max-w-[600px] text-center md:text-left z-10">
+            <h2 class="text-lg text-primary mb-2 font-heading font-bold">Hi, I am</h2>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-4">Prayag V</h1>
+            <h3 class="text-2xl md:text-3xl text-muted font-heading font-bold mb-6">Student & Python Developer</h3>
+            <p class="text-lg text-muted mb-10 max-w-[500px] mx-auto md:mx-0">I am a B.Tech student in AI & ML who loves building Python applications, writing clean algorithms, and actively contributing to open-source projects.</p>
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-5 hero-buttons">
+                <a href="resume.pdf" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold font-heading transition-all duration-300 border-none bg-gradient-custom text-white shadow-[0_4px_15px_rgba(99,102,241,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(99,102,241,0.6)]" download><i class="fas fa-download"></i> Download Resume</a>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold font-heading transition-all duration-300 bg-transparent text-main border border-white/20 hover:bg-white/5 hover:border-primary hover:-translate-y-1">Get In Touch</a>
             </div>
         </div>
-        <div class="hero-visual">
+        <div class="flex-1 relative h-[400px] w-full mt-16 md:mt-0 flex justify-center items-center hero-visual">
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
-            <div class="glass-card">
-                <div class="card-content">
-                    <i class="fab fa-python"></i>
-                    <h4>Python</h4>
+            <div class="glass-card absolute top-[20%] left-0 md:left-[10%] z-10">
+                <div class="text-center">
+                    <i class="fab fa-python text-3xl text-secondary mb-2"></i>
+                    <h4 class="font-heading font-bold">Python</h4>
                 </div>
             </div>
-            <div class="glass-card card-2">
-                <div class="card-content">
-                    <i class="fab fa-github"></i>
-                    <h4>Open Source</h4>
+            <div class="glass-card card-2 absolute top-[60%] right-0 md:right-[10%] z-10">
+                <div class="text-center">
+                    <i class="fab fa-github text-3xl text-secondary mb-2"></i>
+                    <h4 class="font-heading font-bold">Open Source</h4>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Open Source Section -->
-    <section id="opensource" class="section">
-        <div class="section-title">
-            <h2>Open Source</h2>
-            <div class="title-underline"></div>
+    <section id="opensource" class="py-24 px-5 md:px-[10%] min-h-screen flex flex-col justify-center">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold mb-2 text-gradient inline-block">Open Source</h2>
+            <div class="h-1 w-16 bg-gradient-custom mx-auto rounded-sm"></div>
         </div>
-        <div class="os-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- SymPy -->
-            <div class="os-card">
-                <div class="os-header">
-                    <div class="os-title">
-                        <i class="fab fa-github"></i>
-                        <h3>SymPy</h3>
+            <div class="bg-surface p-8 rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-primary/20 break-words group">
+                <div class="flex justify-between items-center flex-wrap gap-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-github text-3xl text-primary"></i>
+                        <h3 class="font-heading font-bold text-2xl">SymPy</h3>
                     </div>
-                    <span class="os-badge">38 Merged PRs</span>
+                    <span class="bg-gradient-custom px-3 py-1 rounded-full text-[0.85rem] font-bold text-white">38 Merged PRs</span>
                 </div>
-                <p>
+                <p class="text-main text-base mt-4 mb-5 leading-relaxed">
                     Active contributor to the core algorithms and linear algebra modules of SymPy. Significantly improved the computational performance of matrix operations (Jordan Normal Forms, Eigenvalue evaluations), optimized complex root-finding algorithms, and resolved critical symbolic solver bugs.
                 </p>
-                <a href="https://github.com/sympy/sympy/pulls?q=is%3Apr+is%3Amerged+author%3Avprayag2005" target="_blank" class="os-link">View All Contributions <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/sympy/sympy/pulls?q=is%3Apr+is%3Amerged+author%3Avprayag2005" target="_blank" class="text-secondary font-semibold text-sm inline-flex items-center gap-1 mt-5">View All Contributions <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i></a>
             </div>
 
             <!-- Airspeed Velocity -->
-            <div class="os-card">
-                <div class="os-header">
-                    <div class="os-title">
-                        <i class="fab fa-github"></i>
-                        <h3>Airspeed Velocity (ASV)</h3>
+            <div class="bg-surface p-8 rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-primary/20 break-words group">
+                <div class="flex justify-between items-center flex-wrap gap-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-github text-3xl text-primary"></i>
+                        <h3 class="font-heading font-bold text-2xl">Airspeed Velocity (ASV)</h3>
                     </div>
-                    <span class="os-badge">Feature Addition</span>
+                    <span class="bg-gradient-custom px-3 py-1 rounded-full text-[0.85rem] font-bold text-white">Feature Addition</span>
                 </div>
-                <p>
+                <p class="text-main text-base mt-4 mb-5 leading-relaxed">
                     Contributed to <strong>asv_spyglass</strong>, a part of the standard Python benchmarking tool Airspeed Velocity. Implemented the <code>--only-improved</code> and <code>--only-regressed</code> CLI flags, giving developers a streamlined interface to instantly identify performance regressions and improvements across complex benchmark suites.
                 </p>
-                <a href="https://github.com/airspeed-velocity/asv_spyglass/pull/10" target="_blank" class="os-link">View Pull Request <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/airspeed-velocity/asv_spyglass/pull/10" target="_blank" class="text-secondary font-semibold text-sm inline-flex items-center gap-1 mt-5">View Pull Request <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="section-title">
-            <h2>Featured Projects</h2>
-            <div class="title-underline"></div>
+    <section id="projects" class="py-24 px-5 md:px-[10%] min-h-screen flex flex-col justify-center">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold mb-2 text-gradient inline-block">Featured Projects</h2>
+            <div class="h-1 w-16 bg-gradient-custom mx-auto rounded-sm"></div>
         </div>
-        <div class="projects-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
             <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="https://opengraph.githubassets.com/bf7714cdacb1f2f7c2d05403c542fb2956041d48b81cbd8f3efa5f211ed34a6b/vprayag2005/WeatherApp" alt="WeatherApp Preview" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="bg-surface rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-primary/20 break-words flex flex-col">
+                <div class="h-[200px] bg-gradient-to-tr from-[#1e1e1e] to-[#2d2d2d] relative flex-shrink-0">
+                    <img src="https://opengraph.githubassets.com/bf7714cdacb1f2f7c2d05403c542fb2956041d48b81cbd8f3efa5f211ed34a6b/vprayag2005/WeatherApp" alt="WeatherApp Preview" class="w-full h-full object-cover">
                 </div>
-                <div class="project-info">
-                    <h3>WeatherApp (Clima)</h3>
-                    <p>A comprehensive weather portal integrating real-time IMD severe weather alerts and personalized regional news. Engineered with asynchronous background processing to sync heavy meteorological maps.</p>
-                    <div class="tech-tags">
-                        <span>Python (Django)</span>
-                        <span>Celery & Redis</span>
-                        <span>MySQL</span>
-                        <span>Docker</span>
-                        <span>Playwright</span>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="font-heading font-bold text-2xl mb-3">WeatherApp (Clima)</h3>
+                    <p class="text-muted text-[0.95rem] mb-5 flex-1">A comprehensive weather portal integrating real-time IMD severe weather alerts and personalized regional news. Engineered with asynchronous background processing to sync heavy meteorological maps.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Python (Django)</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Celery & Redis</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Docker</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Playwright</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/vprayag2005/WeatherApp" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
-                        <a href="https://clima-weather.centralindia.cloudapp.azure.com/" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/vprayag2005/WeatherApp" target="_blank" class="flex items-center gap-2 text-main text-sm transition-colors duration-300 hover:text-secondary"><i class="fab fa-github"></i> Source</a>
+                        <a href="https://clima-weather.centralindia.cloudapp.azure.com/" target="_blank" class="flex items-center gap-2 text-main text-sm transition-colors duration-300 hover:text-secondary"><i class="fas fa-external-link-alt"></i> Live</a>
                     </div>
                 </div>
             </div>
             <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="https://opengraph.githubassets.com/f21750ead22e81fefb1563982c6aa35ceb52170833f0e9d97f87d0c68343e9d5/vprayag2005/VisumateBot" alt="VisumateBot Preview" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="bg-surface rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-primary/20 break-words flex flex-col">
+                <div class="h-[200px] bg-gradient-to-tr from-[#1e1e1e] to-[#2d2d2d] relative flex-shrink-0">
+                    <img src="https://opengraph.githubassets.com/f21750ead22e81fefb1563982c6aa35ceb52170833f0e9d97f87d0c68343e9d5/vprayag2005/VisumateBot" alt="VisumateBot Preview" class="w-full h-full object-cover">
                 </div>
-                <div class="project-info">
-                    <h3>VisumateBot (AI Video Generator)</h3>
-                    <p>An intelligent Telegram bot that leverages Google's Gemini AI and the Pexels API to automatically generate stunning landscape and portrait videos directly from chat commands.</p>
-                    <div class="tech-tags">
-                        <span>Python</span>
-                        <span>Telegram API</span>
-                        <span>Gemini AI</span>
-                        <span>Pexels API</span>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="font-heading font-bold text-2xl mb-3">VisumateBot (AI Video Generator)</h3>
+                    <p class="text-muted text-[0.95rem] mb-5 flex-1">An intelligent Telegram bot that leverages Google's Gemini AI and the Pexels API to automatically generate stunning landscape and portrait videos directly from chat commands.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Python</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Telegram API</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Gemini AI</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Pexels API</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/vprayag2005/VisumateBot" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/vprayag2005/VisumateBot" target="_blank" class="flex items-center gap-2 text-main text-sm transition-colors duration-300 hover:text-secondary"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
             <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="https://opengraph.githubassets.com/d1bf2eba57a4e101ec7fa9b5d90ad4dcf778857215397806066de9c1a86eb5ff/vprayag2005/Advance-Calculator" alt="Advance Calculator Preview" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="bg-surface rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-primary/20 break-words flex flex-col">
+                <div class="h-[200px] bg-gradient-to-tr from-[#1e1e1e] to-[#2d2d2d] relative flex-shrink-0">
+                    <img src="https://opengraph.githubassets.com/d1bf2eba57a4e101ec7fa9b5d90ad4dcf778857215397806066de9c1a86eb5ff/vprayag2005/Advance-Calculator" alt="Advance Calculator Preview" class="w-full h-full object-cover">
                 </div>
-                <div class="project-info">
-                    <h3>Advanced CLI Calculator</h3>
-                    <p>An interactive, modular calculator featuring custom algorithmic implementations (Heron's method, Newton-Raphson, Maclaurin series) and backed by robust automated tests.</p>
-                    <div class="tech-tags">
-                        <span>Python 3</span>
-                        <span>Algorithms</span>
-                        <span>Pytest</span>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="font-heading font-bold text-2xl mb-3">Advanced CLI Calculator</h3>
+                    <p class="text-muted text-[0.95rem] mb-5 flex-1">An interactive, modular calculator featuring custom algorithmic implementations (Heron's method, Newton-Raphson, Maclaurin series) and backed by robust automated tests.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Python 3</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Algorithms</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Pytest</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/vprayag2005/Advance-Calculator" target="_blank" class="link-btn"><i class="fab fa-github"></i> Source</a>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/vprayag2005/Advance-Calculator" target="_blank" class="flex items-center gap-2 text-main text-sm transition-colors duration-300 hover:text-secondary"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
             </div>
@@ -172,77 +209,79 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="section-title">
-            <h2>My Skills</h2>
-            <div class="title-underline"></div>
+    <section id="skills" class="py-24 px-5 md:px-[10%] min-h-screen flex flex-col justify-center">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold mb-2 text-gradient inline-block">My Skills</h2>
+            <div class="h-1 w-16 bg-gradient-custom mx-auto rounded-sm"></div>
         </div>
-        <div class="skills-grid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Skill Cards -->
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Python & Core</h3>
-                <p>Python 3, Data Structures, Algorithms, Linear Algebra</p>
+            <div class="bg-surface p-10 rounded-2xl text-center border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-surface-light hover:border-primary/30 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                <i class="fab fa-python text-5xl mb-5 text-gradient inline-block"></i>
+                <h3 class="font-heading font-bold text-xl mb-2">Python & Core</h3>
+                <p class="text-muted text-sm">Python 3, Data Structures, Algorithms, Linear Algebra</p>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-server"></i>
-                <h3>Backend & Systems</h3>
-                <p>Django, Celery, Redis, Docker</p>
+            <div class="bg-surface p-10 rounded-2xl text-center border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-surface-light hover:border-primary/30 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                <i class="fas fa-server text-5xl mb-5 text-gradient inline-block"></i>
+                <h3 class="font-heading font-bold text-xl mb-2">Backend & Systems</h3>
+                <p class="text-muted text-sm">Django, Celery, Redis, Docker</p>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Databases</h3>
-                <p>MySQL</p>
+            <div class="bg-surface p-10 rounded-2xl text-center border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-surface-light hover:border-primary/30 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                <i class="fas fa-database text-5xl mb-5 text-gradient inline-block"></i>
+                <h3 class="font-heading font-bold text-xl mb-2">Databases</h3>
+                <p class="text-muted text-sm">MySQL</p>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-wrench"></i>
-                <h3>Libraries & Tools</h3>
-                <p>SymPy, Pytest, Playwright, Git</p>
+            <div class="bg-surface p-10 rounded-2xl text-center border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-surface-light hover:border-primary/30 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                <i class="fas fa-wrench text-5xl mb-5 text-gradient inline-block"></i>
+                <h3 class="font-heading font-bold text-xl mb-2">Libraries & Tools</h3>
+                <p class="text-muted text-sm">SymPy, Pytest, Playwright, Git</p>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="section-title">
-            <h2>Education</h2>
-            <div class="title-underline"></div>
+    <section id="education" class="py-24 px-5 md:px-[10%] min-h-screen flex flex-col justify-center">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold mb-2 text-gradient inline-block">Education</h2>
+            <div class="h-1 w-16 bg-gradient-custom mx-auto rounded-sm"></div>
         </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>B.Tech in Artificial Intelligence & Machine Learning</h3>
-                    <h4 class="university">Vidya Academy of Science and Technology</h4>
-                    <p class="date">2023 - 2027 (Expected)</p>
-                    <p>Focusing on core AI algorithms, machine learning models, and software engineering principles.</p>
+        <div class="relative max-w-[800px] mx-auto before:content-[''] before:absolute before:w-0.5 before:bg-white/10 before:top-0 before:bottom-0 before:left-5 md:before:left-1/2 md:before:-translate-x-1/2">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-14 md:pl-0 md:w-1/2 md:pr-14 mb-10 w-full md:odd:ml-0 md:even:ml-auto md:even:pl-14">
+                <div class="absolute left-[11px] md:left-auto md:right-[-10px] top-1.5 w-5 h-5 bg-dark border-4 border-primary rounded-full z-10"></div>
+                <div class="bg-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 hover:border-secondary md:hover:-translate-x-2">
+                    <h3 class="text-xl font-heading font-bold text-white mb-1">B.Tech in Artificial Intelligence & Machine Learning</h3>
+                    <h4 class="text-primary font-medium mb-2">Vidya Academy of Science and Technology</h4>
+                    <p class="text-muted text-sm mb-4">2023 - 2027 (Expected)</p>
+                    <p class="text-[0.95rem]">Focusing on core AI algorithms, machine learning models, and software engineering principles.</p>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>High School</h3>
-                    <h4 class="university">KMBVM Thrissur</h4>
-                    <p class="date">Completed</p>
-                    <p>Strong foundation in Science and Mathematics.</p>
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-14 md:pl-0 md:w-1/2 md:pr-14 mb-10 w-full md:even:ml-auto md:even:pl-14">
+                <div class="absolute left-[11px] md:left-[-10px] top-1.5 w-5 h-5 bg-dark border-4 border-primary rounded-full z-10"></div>
+                <div class="bg-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 hover:border-secondary md:hover:translate-x-2">
+                    <h3 class="text-xl font-heading font-bold text-white mb-1">High School</h3>
+                    <h4 class="text-primary font-medium mb-2">KMBVM Thrissur</h4>
+                    <p class="text-muted text-sm mb-4">Completed</p>
+                    <p class="text-[0.95rem]">Strong foundation in Science and Mathematics.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <h2>Let's Connect</h2>
-            <p>I'm currently looking for new opportunities, my inbox is always open.</p>
-            <div class="social-links">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.prayag2005@gmail.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/prayag-v-82075b298/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/vprayag2005" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+    <footer id="contact" class="bg-surface pt-20 pb-8 px-5 md:px-[10%] text-center border-t border-white/5">
+        <div class="mb-16">
+            <h2 class="text-4xl font-heading font-bold mb-5">Let's Connect</h2>
+            <p class="text-muted max-w-[500px] mx-auto mb-10">I'm currently looking for new opportunities, my inbox is always open.</p>
+            <div class="flex justify-center gap-5">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.prayag2005@gmail.com" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex justify-center items-center text-xl text-main transition-all duration-300 border border-white/10 hover:bg-gradient-custom hover:-translate-y-1 hover:border-transparent"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/prayag-v-82075b298/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex justify-center items-center text-xl text-main transition-all duration-300 border border-white/10 hover:bg-gradient-custom hover:-translate-y-1 hover:border-transparent"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/vprayag2005" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex justify-center items-center text-xl text-main transition-all duration-300 border border-white/10 hover:bg-gradient-custom hover:-translate-y-1 hover:border-transparent"><i class="fab fa-github"></i></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Prayag V. Built with <i class="fas fa-heart"></i></p>
+        <div class="pt-8 border-t border-white/5 text-muted text-sm">
+            <p>&copy; <span id="year"></span> Prayag V. Built with <i class="fas fa-heart text-secondary"></i></p>
         </div>
     </footer>
 
@@ -250,4 +289,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
